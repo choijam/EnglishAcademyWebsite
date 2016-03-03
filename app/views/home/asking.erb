@@ -1,0 +1,45 @@
+<%= render :partial =>"home/basic"%>
+<br><br>
+ <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <div class="row center">
+        <h5 class="header col s12 light">이름 연락처 상담 내용을 남겨주세요.</h5>
+      </div>
+    
+      
+      <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">이름</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">연락처</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email" data-error="wrong" data-success="right">상담 내용</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+    <div class="row center">
+        <a href="/home/asking" id="download-button" class="btn-large waves-effect waves-light orange">상담신청하기</a>
+      </div>
+      
+      <br><br>
+    </div>
+  </div>
+
+
+      
+ 
+        
+<br><br>
+<%= render :partial =>"home/down"%>
