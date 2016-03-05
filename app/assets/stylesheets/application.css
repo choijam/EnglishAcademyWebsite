@@ -57,3 +57,133 @@ span.badge.new {
     margin-right: 1em; }
   .flickr_pagination .next_page {
     margin-left: 1em; }
+    
+    
+    /* 숙제 css */
+    /* sassy buttons normally */
+/* Typography */
+
+html {
+  font-size: 87.5%;
+  line-height: 1.64286em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #666;
+}
+
+h1 {
+  font-size: 3.28571em;
+  line-height: 1.5em;
+}
+
+h2 {
+  font-size: 2.42857em;
+  line-height: 1.35294em;
+}
+
+h3 {
+  font-size: 1.57143em;
+  line-height: 2.09091em;
+}
+
+h4 {
+  font-size: 1.35714em;
+  line-height: 1.21053em;
+}
+
+h5 {
+  font-size: 1.14286em;
+  line-height: 1.4375em;
+}
+
+h6 {
+  font-size: 1em;
+  line-height: 1.64286em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/retina_wood.png");
+  font-weight: 400;
+  color: #333;
+  margin-top: 2em;
+}
+
+.page {
+  width: 760px;
+  /* for now */
+  margin: 0 auto;
+}
+
+.post {
+  background: #eee;
+  border-width: 0.07143em;
+  border-style: solid;
+  padding: 1.57143em;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 1px solid #ccc;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px 0;
+}
+
+h2 a {
+  text-decoration: none;
+  color: #666;
+}
+
+/* Metadata */
+.post-meta {
+  font-size: 1em;
+  line-height: 1.64286em;
+  text-align: right;
+}
+
+.post-meta ul {
+  list-style: none;
+}
+
+.post-meta li {
+  display: inline-block;
+  margin-left: 1em;
+  color: #777;
+}
+
+.post-meta a {
+  color: #777;
+  text-decoration: none;
+}
+
+.post-meta a:hover {
+  color: #333;
+}
+
+/* Comments bubble */
+a.post-comments {
+  position: relative;
+  float: right;
+  top: 20px;
+  text-decoration: none;
+  font-size: 2em;
+  color: #ccc;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+}
+
+a.post-comments:hover {
+  color: #555;
+}
+
+

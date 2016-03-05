@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   
   def three
     WillPaginate.per_page= 3
-    @output_hw=Homework.paginate(:page => params[:page], :per_page => 3)
+    @output_hw=Homework.paginate(:page => params[:page]).order('created_at desc')
   end
   
   def asking
