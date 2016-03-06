@@ -27,5 +27,9 @@ class HomeController < ApplicationController
     redirect_to '/home/three'
   end
   
+  def hw_delete
+    
+  end
+  
   
 end

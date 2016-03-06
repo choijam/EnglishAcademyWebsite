@@ -15,11 +15,8 @@
     
     <!--숙제 출력-->
     <%@output_hw.each do |x|%>
-      <br>
-    
-      <br>
+      <br><br>
       
-    <h1>ddd</h1>
   <article class="post" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
     <meta content="en" itemprop="inLanguage" />
 
@@ -37,12 +34,12 @@
         </li>
         <li>
           <i class="icon-user"></i>
-          <a href="#" itemprop="author">flocko</a>
+          <a href="#" itemprop="author">이설희</a>
         </li>
         <li>
           <i class="icon-tags"></i>
           <a href="#" itemprop="keywords">수정</a>
-          <a href="#" itemprop="keywords">삭제</a>
+          <a href="/home/hw_delete/<%=x.id%>" itemprop="keywords">삭제</a>
         </li>
       </ul>
     </footer>
