@@ -27,7 +27,10 @@ class HomeController < ApplicationController
     redirect_to '/home/three'
   end
   
-  def hw_delete
+  def de_h730
+    de_h730=H730.find(params[:id])
+    de_h730.destroy
+    redirect_to '/home/h730'
     
   end
   
@@ -63,6 +66,12 @@ class HomeController < ApplicationController
   def h735_write
   end
   
+  def de_h735
+    de_h735=H735.find(params[:id])
+    de_h735.destroy
+    redirect_to '/home/h735'
+  end
+  
   def h727
     WillPaginate.per_page= 3
     @h727=H727.paginate(:page => params[:page]).order('created_at desc')
@@ -77,6 +86,12 @@ class HomeController < ApplicationController
   end
   
   def h727_write
+  end
+  
+  def de_h727
+    de_h727=H727.find(params[:id])
+    de_h727.destroy
+    redirect_to '/home/h727'
   end
   
   def h738
@@ -95,6 +110,12 @@ class HomeController < ApplicationController
   def h738_write
   end
   
+  def de_h738
+    de_h738=H738.find(params[:id])
+    de_h738.destroy
+    redirect_to '/home/h738'
+  end
+  
   def h725
     WillPaginate.per_page= 3
     @h725=H725.paginate(:page => params[:page]).order('created_at desc')
@@ -109,6 +130,12 @@ class HomeController < ApplicationController
   end
 
   def h725_write
+  end
+  
+  def de_h725
+    de_h725=H725.find(params[:id])
+    de_h725.destroy
+    redirect_to '/home/h725'
   end
   
   def h500
@@ -127,6 +154,12 @@ class HomeController < ApplicationController
   def h500_write
   end
   
+  def de_h500
+    de_h500=H500.find(params[:id])
+    de_h500.destroy
+    redirect_to '/home/h500'
+  end
+  
   def h510
     WillPaginate.per_page= 3
     @h510=H510.paginate(:page => params[:page]).order('created_at desc')
@@ -137,10 +170,16 @@ class HomeController < ApplicationController
     allcontents.title=params[:title]
     allcontents.content=params[:content]
     allcontents.save
-    redirect_to '/home/h510'
+    redirect_to '/home/three'
   end
 
   def h510_write
+  end
+  
+  def de_h510
+    de_h510=H510.find(params[:id])
+    de_h510.destroy
+    redirect_to '/home/three'
   end
   
   def h339
@@ -157,6 +196,12 @@ class HomeController < ApplicationController
   end
 
   def h339_write
+  end
+  
+  def de_h339
+    de_h339=H339.find(params[:id])
+    de_h339.destroy
+    redirect_to '/home/h339'
   end
   
   
