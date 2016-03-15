@@ -7,12 +7,7 @@ class HomeController < ApplicationController
   
   def homework
   end
-  
-  def three
-    WillPaginate.per_page= 3
-    @output_hw=Homework.paginate(:page => params[:page]).order('created_at desc')
-  end
-  
+ 
   def asking
   end
   
@@ -50,6 +45,20 @@ class HomeController < ApplicationController
   def h730_write
   end
   
+  def h730_modify
+     @mo_content=H730.find(params[:id])
+     
+  end
+  
+  def h730_update
+     up_content=H730.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h730'
+  end
+  
+  
   def h735
     WillPaginate.per_page= 3
     @h735=H735.paginate(:page => params[:page]).order('created_at desc')
@@ -69,6 +78,19 @@ class HomeController < ApplicationController
   def de_h735
     de_h735=H735.find(params[:id])
     de_h735.destroy
+    redirect_to '/home/h735'
+  end
+  
+  def h735_modify
+     @mo_content=H735.find(params[:id])
+     
+  end
+  
+  def h735_update
+     up_content=H735.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
     redirect_to '/home/h735'
   end
   
@@ -94,6 +116,19 @@ class HomeController < ApplicationController
     redirect_to '/home/h727'
   end
   
+  def h727_modify
+     @mo_content=H727.find(params[:id])
+     
+  end
+  
+  def h727_update
+     up_content=H727.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h727'
+  end
+  
   def h738
     WillPaginate.per_page= 3
     @h738=H738.paginate(:page => params[:page]).order('created_at desc')
@@ -113,6 +148,19 @@ class HomeController < ApplicationController
   def de_h738
     de_h738=H738.find(params[:id])
     de_h738.destroy
+    redirect_to '/home/h738'
+  end
+  
+  def h738_modify
+     @mo_content=H738.find(params[:id])
+     
+  end
+  
+  def h738_update
+     up_content=H738.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
     redirect_to '/home/h738'
   end
   
@@ -138,6 +186,19 @@ class HomeController < ApplicationController
     redirect_to '/home/h725'
   end
   
+  def h725_modify
+     @mo_content=H725.find(params[:id])
+     
+  end
+  
+  def h725_update
+     up_content=H725.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h725'
+  end
+  
   def h500
     WillPaginate.per_page= 3
     @h500=H500.paginate(:page => params[:page]).order('created_at desc')
@@ -160,6 +221,19 @@ class HomeController < ApplicationController
     redirect_to '/home/h500'
   end
   
+  def h500_modify
+     @mo_content=H500.find(params[:id])
+     
+  end
+  
+  def h500_update
+     up_content=H500.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h500'
+  end
+  
   def h510
     WillPaginate.per_page= 3
     @h510=H510.paginate(:page => params[:page]).order('created_at desc')
@@ -170,7 +244,7 @@ class HomeController < ApplicationController
     allcontents.title=params[:title]
     allcontents.content=params[:content]
     allcontents.save
-    redirect_to '/home/three'
+    redirect_to '/home/h510'
   end
 
   def h510_write
@@ -179,7 +253,20 @@ class HomeController < ApplicationController
   def de_h510
     de_h510=H510.find(params[:id])
     de_h510.destroy
-    redirect_to '/home/three'
+    redirect_to '/home/h510'
+  end
+  
+  def h510_modify
+     @mo_content=H510.find(params[:id])
+     
+  end
+  
+  def h510_update
+     up_content=H510.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h510'
   end
   
   def h339
@@ -201,6 +288,19 @@ class HomeController < ApplicationController
   def de_h339
     de_h339=H339.find(params[:id])
     de_h339.destroy
+    redirect_to '/home/h339'
+  end
+  
+  def h339_modify
+     @mo_content=H339.find(params[:id])
+     
+  end
+  
+  def h339_update
+     up_content=H339.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
     redirect_to '/home/h339'
   end
   

@@ -1,0 +1,38 @@
+<%= render :partial =>"home/basic"%>
+<br><br>
+ <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        
+      <br><br>
+    
+      <div class="row">
+        <form class="col s12" action="/home/h730_update/<%=@mo_content.id%>" method="POST">
+          <div class="row">
+              <div class="input-field col s6">
+              <i class="material-icons prefix">star_rate</i>
+              <textarea name="title" class="materialize-textarea"><%=@mo_content.title%></textarea>
+            </div>
+            <br>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea name="content" class="materialize-textarea"><%=@mo_content.content%></textarea>
+              <br><br><br>
+              <div class="row center">
+                  <input type="submit" class="btn-large waves-effect waves-light orange" value="수정 완료">
+              </div>
+             
+            </div>
+          </div>
+        </form>
+      </div>
+        
+      <br><br>
+    </div>
+  </div>
+
+
+      
+ 
+        
+<br><br>
+<%= render :partial =>"home/down"%>
