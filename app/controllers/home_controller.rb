@@ -38,6 +38,7 @@ class HomeController < ApplicationController
     allcontents=H730.new
     allcontents.title=params[:title]
     allcontents.content=params[:content]
+    allcontents.my_image=params[:hw_file]
     allcontents.save
     redirect_to '/home/h730'
   end

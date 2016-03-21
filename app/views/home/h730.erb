@@ -23,7 +23,10 @@
     <h2 itemprop="headline"><%=x.title%></h2>
     <div class="abstract" itemprop="description">
       <p>
-        <%=x.content%>
+        <%=x.content%><br><br>
+        <% if (x.my_image.url.present?) then %>
+        <a href="<%=x.my_image.url%>">첨부파일</a>
+        <% end %>
       </p>
     </div>
     <footer class="post-meta">
@@ -32,6 +35,7 @@
           <i class="icon-time"></i>
           <time itemprop="datePublished"><%= x.created_at.to_s(:db) %></time>
         </li>
+       
         <li>
           <i class="icon-user"></i>
           <a href="#" itemprop="author">이설희</a>

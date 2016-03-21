@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'fog'
+gem 'carrierwave'
+
 gem 'will_paginate', '~> 3.0.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
