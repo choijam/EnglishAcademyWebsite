@@ -305,5 +305,24 @@ class HomeController < ApplicationController
     redirect_to '/home/h339'
   end
   
+  def announce
+    WillPaginate.per_page= 3
+    @announce=Announce.paginate(:page => params[:page]).order('created_at desc')
+    @a=Announce.all
+    
+  end
+  
+  def announce_write
+  end
+  
+  def announce_upload
+    announce=Announce.new
+    announce.title=params[:title]
+    announce.content=params[:content]
+    announce.save
+    redirect_to '/home/announce'
+  end
+  
+  
   
 end

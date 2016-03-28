@@ -1,0 +1,29 @@
+<%= render :partial =>"home/basic"%>
+
+ <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+    <div class="row right">
+    <a href="/home/announce_write" class="btn-large waves-effect waves-light orange" >공지사항 작성</a>
+    </div>
+     <br><br>
+         
+       <section id="postIndex" class="widthWrapper">
+         <%@announce.each do |x|%>
+           <article>
+             <a target="_blank" href="#">
+               <h2><%=x.title%></h2>
+               <%=raw(x.content)%>
+             </a>
+           </article>
+         <%end%>
+       </section>
+    <div class="flickr_pagination">
+     <%= will_paginate @announce %>
+    </div>
+    </div>
+  </div>
+  
+  <br><br><br><br><br><br><br><br>
+  
+<%= render :partial =>"home/down"%>

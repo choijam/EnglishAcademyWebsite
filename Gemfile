@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bootsy'
 gem 'fog'
 gem 'carrierwave'
 
