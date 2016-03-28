@@ -8,16 +8,17 @@
     </div>
      <br><br>
          
-       <section id="postIndex" class="widthWrapper">
+       
          <%@announce.each do |x|%>
-           <article>
-             <a target="_blank" href="#">
+          
                <h2><%=x.title%></h2>
                <%=raw(x.content)%>
-             </a>
-           </article>
+          
+         
          <%end%>
-       </section>
+     
+     
+     
     <div class="flickr_pagination">
      <%= will_paginate @announce %>
     </div>
