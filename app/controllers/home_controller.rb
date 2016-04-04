@@ -22,6 +22,10 @@ class HomeController < ApplicationController
     redirect_to '/home/three'
   end
   
+  def h730_1
+    
+  end
+  
   def de_h730
     de_h730=H730.find(params[:id])
     de_h730.destroy
@@ -38,7 +42,6 @@ class HomeController < ApplicationController
     allcontents=H730.new
     allcontents.title=params[:title]
     allcontents.content=params[:content]
-    allcontents.my_image=params[:hw_file]
     allcontents.save
     redirect_to '/home/h730'
   end
