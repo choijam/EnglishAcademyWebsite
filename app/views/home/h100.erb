@@ -1,0 +1,80 @@
+<%= render :partial =>"home/basic"%>
+<br><br>
+
+ <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+    
+    <% unless current_user.nil? %>
+      <% if current_user.email == "snowgirl2677@naver.com" %>
+        <div class="row right">
+        <a href="/home/h100_write" class="btn-large waves-effect waves-light orange">숙제 작성</a>
+        </div>
+      <% end %>
+    <% end %>  
+    
+    <br><br><br><br>
+    
+    <!--숙제 출력-->
+    <%@h100.each do |x|%>
+      <br><br>
+      
+  <article class="post" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+    <meta content="en" itemprop="inLanguage" />
+
+    <h2 itemprop="headline"><%=x.title%></h2>
+    <div class="abstract" itemprop="description">
+      <p>
+         <%=raw(x.content)%><br><br>
+      </p>
+    </div>
+    <footer class="post-meta">
+      <ul>
+        <li>
+          <i class="icon-time"></i>
+          <time itemprop="datePublished"><%= x.created_at.to_s(:db) %></time>
+        </li>
+       
+        <li>
+          <i class="icon-user"></i>
+          <a href="#" itemprop="author"><%=x.user.email if x.user%></a>
+        </li>
+        <li>
+          <i class="icon-tags"></i>
+          
+
+        <% unless current_user.nil? %>
+          <% if current_user.email == "snowgirl2677@naver.com" %>
+            <a href="/home/h100_modify/<%=x.id%>" itemprop="keywords">수정</a>
+            <a href="/home/de_h100/<%=x.id%>" itemprop="keywords">삭제</a>
+          <% end %>
+        <% end %>
+          
+
+        </li>
+      </ul>
+    </footer>
+  </article>
+
+
+     <hr> 
+    <%end%>
+      <br><br>
+      
+    <!--paginate 출력-->  
+    <div class="flickr_pagination">
+    <%= will_paginate @h100 %>
+    </div>
+    <!--숙제 출력 종료-->
+  
+    
+
+   
+      
+      <br><br>
+    </div>
+  </div>
+
+
+<br><br>
+<%= render :partial =>"home/down"%>

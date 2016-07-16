@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :H725s
   has_many :H735s
   has_many :H738s
+  has_many :H100s
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

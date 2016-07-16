@@ -355,6 +355,41 @@ class HomeController < ApplicationController
     redirect_to '/home/announce'
   end
   
+   
+  def h100
+    WillPaginate.per_page= 3
+    @h100=H100.paginate(:page => params[:page]).order('created_at desc')
+  end
+  
+  def h100_upload
+    allcontents=H100.new
+    allcontents.title=params[:title]
+    allcontents.content=params[:content]
+    allcontents.save
+    redirect_to '/home/h100'
+  end
+  
+  def h100_write
+  end
+  
+  def de_h100
+    de_h100=H100.find(params[:id])
+    de_h100.destroy
+    redirect_to '/home/h100'
+  end
+  
+  def h100_modify
+     @mo_content=H100.find(params[:id])
+     
+  end
+  
+  def h735_update
+     up_content=H100.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h100'
+  end
   
   
 end
