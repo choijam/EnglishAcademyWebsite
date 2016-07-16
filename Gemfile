@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'mailgun-ruby' #for 상담 메일 전송
+
+gem 'devise'
+
 gem 'bootsy'
 gem 'fog'
 gem 'carrierwave'

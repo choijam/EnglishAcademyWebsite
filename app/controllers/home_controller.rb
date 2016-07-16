@@ -1,7 +1,9 @@
+require 'mailgun'
+
 class HomeController < ApplicationController
   def index
   end
-  
+
   def login
   end
   
@@ -10,6 +12,32 @@ class HomeController < ApplicationController
  
   def asking
   end
+  
+  def asking_write
+    @name=params[:name]
+    @number=params[:telephone]
+    @email=params[:email]
+    @content=params[:content]
+    
+    @text="이름 : "+ @name +" 연락처 : "+ @number + " 상담 내용 : "+ @content
+    
+    mg_client = Mailgun::Client.new("key-11c79ef0dcaa65baf75506b06e8f30bf")
+
+    message_params =  {
+                       from: @email,
+                       to:   'snowgirl2677@naver.com',
+                       subject: '상담 신청 이메일 입니다.',
+                       text: @text
+                      }
+    
+    result = mg_client.send_message('sandbox4a671b657c4e4e9aafce7e85e2ef2519.mailgun.org', message_params).to_h!
+    
+    message_id = result['id']
+    message = result['message']
+    
+    redirect_to '/'
+  end
+  
   
   def three_write
   end
@@ -39,10 +67,10 @@ class HomeController < ApplicationController
   end
   
   def h730_upload
-    allcontents=H730.new
-    allcontents.title=params[:title]
-    allcontents.content=params[:content]
+    allcontents= H730.new(title: params[:title],
+    content: params[:content], user: current_user)
     allcontents.save
+    
     redirect_to '/home/h730'
   end
   
@@ -56,10 +84,11 @@ class HomeController < ApplicationController
   
   def h730_update
      up_content=H730.find(params[:id])
-     up_content.title=params[:title]
-     up_content.content=params[:content]
+     up_content.title = params[:title]
+     up_content.content = params[:content]
      up_content.save
-    redirect_to '/home/h730'
+     
+     redirect_to '/home/h730'
   end
   
   
