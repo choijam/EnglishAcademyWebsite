@@ -3,7 +3,7 @@ class CreateAnnounces < ActiveRecord::Migration
     create_table :announces do |t|
 
        t.string :title
-      t.string :content
+       t.string :content
       
       t.timestamps null: false
     end

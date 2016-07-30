@@ -3,28 +3,30 @@
  <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-    <div class="row right">
-    <a href="/home/announce_write" class="btn-large waves-effect waves-light orange" >공지사항 작성</a>
-    </div>
-     <br><br>
+      
+    <% unless current_user.nil? %>
+      <% if current_user.email == "snowgirl2677@naver.com" %>
+        <div class="row right">
+        <a href="/home/announce_write" class="btn-large waves-effect waves-light orange">공지사항 작성</a>
+        </div>
+      <% end %>
+    <% end %><br><br>
          
        
          <%@announce.each do |x|%>
-          
-               <h2><%=x.title%></h2>
+               <h2 style="font-size: 150%; font-weight: bold;"><%=x.title%></h2>
                <%=raw(x.content)%>
-          
          <hr>
          <%end%>
      
      
-     
+     <br><br><br><br><br>
     <div class="flickr_pagination">
      <%= will_paginate @announce %>
     </div>
     </div>
   </div>
   
-  <br><br><br><br><br><br><br><br>
+ <br><br><br><br><br><br><br><br>
   
 <%= render :partial =>"home/down"%>
