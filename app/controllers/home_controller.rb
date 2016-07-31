@@ -355,6 +355,23 @@ class HomeController < ApplicationController
     redirect_to '/home/announce'
   end
   
+  def announce_modify
+    @mo_content=Announce.find(params[:id])
+  end
+  
+  def de_announce
+    de_h100=Announce.find(params[:id])
+    de_h100.destroy
+    redirect_to '/home/announce'
+  end
+  
+  def announce_update
+     up_content=Announce.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/announce'
+  end
    
   def h100
     WillPaginate.per_page= 3

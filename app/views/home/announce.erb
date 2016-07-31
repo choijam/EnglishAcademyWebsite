@@ -16,7 +16,14 @@
          <%@announce.each do |x|%>
                <h2 style="font-size: 150%; font-weight: bold;"><%=x.title%></h2>
                <%=raw(x.content)%>
-         <hr>
+               
+            <% unless current_user.nil? %>
+              <% if current_user.email == "snowgirl2677@naver.com" %>
+                <a href="/home/announce_modify/<%=x.id%>" itemprop="keywords">수정</a>
+                <a href="/home/de_announce/<%=x.id%>" itemprop="keywords">삭제</a>
+              <% end %>
+            <% end %>
+         <hr><br><br>
          <%end%>
      
      
