@@ -1,0 +1,28 @@
+<%= render :partial =>"home/basic"%>
+<br><br><br><br>
+
+ <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+    
+        <div class="row">
+        <h5><%=raw(@mo_content.title)%></h5><hr><br>
+        </div>
+        <p><%=raw(@mo_content.content)%></p>
+       
+        
+        
+        <br><br><br><br>
+        <% unless current_user.nil? %>
+            <% if current_user.email == "snowgirl2677@naver.com" %>
+                <a href="/home/h725_modify/<%=@mo_content.id%>" itemprop="keywords">수정</a>
+                <a href="/home/de_h725/<%=@mo_content.id%>" itemprop="keywords">삭제</a>
+            <% end %>
+        <% end %>
+        
+        
+        
+    </div>
+</div>
+
+<br><br> <br><br><br><br><br><br><br><br><br><br><br>
+<%= render :partial =>"home/down"%>

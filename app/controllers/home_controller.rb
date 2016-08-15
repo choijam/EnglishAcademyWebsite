@@ -50,8 +50,8 @@ class HomeController < ApplicationController
     redirect_to '/home/three'
   end
   
-  def h730_1
-    
+  def h730_content_view
+    @mo_content=H730.find(params[:id])
   end
   
   def de_h730
@@ -62,7 +62,7 @@ class HomeController < ApplicationController
   end
   
   def h730
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @h730=H730.paginate(:page => params[:page]).order('created_at desc')
   end
   
@@ -93,7 +93,7 @@ class HomeController < ApplicationController
   
   
   def h735
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @h735=H735.paginate(:page => params[:page]).order('created_at desc')
   end
   
@@ -115,8 +115,7 @@ class HomeController < ApplicationController
   end
   
   def h735_modify
-     @mo_content=H735.find(params[:id])
-     
+     @mo_content=H735.find(params[:id]) 
   end
   
   def h735_update
@@ -127,8 +126,12 @@ class HomeController < ApplicationController
     redirect_to '/home/h735'
   end
   
+  def h735_content_view
+     @mo_content=H735.find(params[:id])
+  end
+  
   def h727
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @h727=H727.paginate(:page => params[:page]).order('created_at desc')
   end
   
@@ -150,8 +153,7 @@ class HomeController < ApplicationController
   end
   
   def h727_modify
-     @mo_content=H727.find(params[:id])
-     
+     @mo_content=H727.find(params[:id])  
   end
   
   def h727_update
@@ -162,8 +164,12 @@ class HomeController < ApplicationController
     redirect_to '/home/h727'
   end
   
+  def h727_content_view
+    @mo_content=H727.find(params[:id]) 
+  end
+  
   def h738
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @h738=H738.paginate(:page => params[:page]).order('created_at desc')
   end
   
@@ -186,7 +192,6 @@ class HomeController < ApplicationController
   
   def h738_modify
      @mo_content=H738.find(params[:id])
-     
   end
   
   def h738_update
@@ -197,8 +202,12 @@ class HomeController < ApplicationController
     redirect_to '/home/h738'
   end
   
+  def h738_content_view
+     @mo_content=H738.find(params[:id])
+  end
+  
   def h725
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @h725=H725.paginate(:page => params[:page]).order('created_at desc')
   end
   
@@ -221,7 +230,6 @@ class HomeController < ApplicationController
   
   def h725_modify
      @mo_content=H725.find(params[:id])
-     
   end
   
   def h725_update
@@ -232,8 +240,12 @@ class HomeController < ApplicationController
     redirect_to '/home/h725'
   end
   
+  def h725_content_view
+    @mo_content=H725.find(params[:id])
+  end
+  
   def h500
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @h500=H500.paginate(:page => params[:page]).order('created_at desc')
   end
   
@@ -267,8 +279,12 @@ class HomeController < ApplicationController
     redirect_to '/home/h500'
   end
   
+  def h500_content_view
+    @mo_content=H500.find(params[:id])
+  end
+  
   def h510
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @h510=H510.paginate(:page => params[:page]).order('created_at desc')
   end
   
@@ -291,7 +307,6 @@ class HomeController < ApplicationController
   
   def h510_modify
      @mo_content=H510.find(params[:id])
-     
   end
   
   def h510_update
@@ -302,8 +317,12 @@ class HomeController < ApplicationController
     redirect_to '/home/h510'
   end
   
+  def h510_content_view
+     @mo_content=H510.find(params[:id])
+  end
+  
   def h339
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @h339=H339.paginate(:page => params[:page]).order('created_at desc')
   end
   
@@ -326,7 +345,6 @@ class HomeController < ApplicationController
   
   def h339_modify
      @mo_content=H339.find(params[:id])
-     
   end
   
   def h339_update
@@ -337,11 +355,19 @@ class HomeController < ApplicationController
     redirect_to '/home/h339'
   end
   
+  def h339_content_view
+     @mo_content=H339.find(params[:id])
+  end
+  
   def announce
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @announce=Announce.paginate(:page => params[:page]).order('created_at desc')
     @a=Announce.all
     
+  end
+  
+  def announce_content_view
+    @mo_content=Announce.find(params[:id])
   end
   
   def announce_write
@@ -374,7 +400,7 @@ class HomeController < ApplicationController
   end
    
   def h100
-    WillPaginate.per_page= 3
+    WillPaginate.per_page= 10
     @h100=H100.paginate(:page => params[:page]).order('created_at desc')
   end
   
@@ -400,7 +426,11 @@ class HomeController < ApplicationController
      
   end
   
-  def h735_update
+  def h100_content_view
+     @mo_content=H100.find(params[:id])
+  end
+
+  def h100_update
      up_content=H100.find(params[:id])
      up_content.title=params[:title]
      up_content.content=params[:content]

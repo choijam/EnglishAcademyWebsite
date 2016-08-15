@@ -15,50 +15,38 @@
     
     <br><br><br><br>
     
-    <!--숙제 출력-->
-    <%@h735.each do |x|%>
-      <br><br>
-      
-  <article class="post" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
-    <meta content="en" itemprop="inLanguage" />
+     <!--숙제 출력-->
+    <style>
+    table.highlight{ table-layout:fixed; }
+    
+    table.highlight th, td {
+        
+        width:10px;
+    }
+    </style>
 
-    <h2 itemprop="headline"><%=x.title%></h2>
-    <div class="abstract" itemprop="description">
-      <p>
-         <%=raw(x.content)%><br><br>
-      </p>
-    </div>
-    <footer class="post-meta">
-      <ul>
-        <li>
-          <i class="icon-time"></i>
-          <time itemprop="datePublished"><%= x.created_at.to_s(:db) %></time>
-        </li>
-       
-        <li>
-          <i class="icon-user"></i>
-          <a href="#" itemprop="author"><%=x.user.email if x.user%></a>
-        </li>
-        <li>
-          <i class="icon-tags"></i>
-          
+    <table class="highlight">
+          <col width="75px" />
+          <col width="20px" />
+        <thead>
+          <tr>
+              <th>제목</th>
+              <th>날짜</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@h735.each do |x|%>
+          <tr>
+            <td><a href="/home/h735_content_view/<%=x.id%>" style=" color: black;"><%=x.title%></a></td>
+            <td><%= time_ago_in_words(x.created_at.in_time_zone("Asia/Seoul"))+" ago" %></td>
+          </tr>
+          <%end%>
+        </tbody>
+    </table>
+    
+    
+   
 
-        <% unless current_user.nil? %>
-          <% if current_user.email == "snowgirl2677@naver.com" %>
-            <a href="/home/h735_modify/<%=x.id%>" itemprop="keywords">수정</a>
-            <a href="/home/de_h735/<%=x.id%>" itemprop="keywords">삭제</a>
-          <% end %>
-        <% end %>
-          
-
-        </li>
-      </ul>
-    </footer>
-  </article>
-
-
-     <hr> 
-    <%end%>
       <br><br>
       
     <!--paginate 출력-->  
@@ -76,5 +64,5 @@
   </div>
 
 
-<br><br>
+<br><br><br><br><br><br><br><br><br><br>
 <%= render :partial =>"home/down"%>

@@ -10,23 +10,36 @@
         <a href="/home/announce_write" class="btn-large waves-effect waves-light orange">공지사항 작성</a>
         </div>
       <% end %>
-    <% end %><br><br>
+    <% end %><br><br><br><br>
          
-       
-         <%@announce.each do |x|%>
-               <h2 style="font-size: 150%; font-weight: bold;"><%=x.title%></h2>
-               <%=raw(x.content)%>
-               
-            <% unless current_user.nil? %>
-              <% if current_user.email == "snowgirl2677@naver.com" %>
-                <a href="/home/announce_modify/<%=x.id%>" itemprop="keywords">수정</a>
-                <a href="/home/de_announce/<%=x.id%>" itemprop="keywords">삭제</a>
-              <% end %>
-            <% end %>
-         <hr><br><br>
-         <%end%>
-     
-     
+    <style>
+    table.highlight{ table-layout:fixed; }
+    
+    table.highlight th, td {
+        
+        width:10px;
+    }
+    </style>
+
+     <table class="highlight">
+         <col width="75px" />
+          <col width="20px" />
+        <thead>
+          <tr>
+              <th>제목</th>
+              <th>날짜</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@announce.each do |x|%>
+          <tr>
+            <td><a href="/home/announce_content_view/<%=x.id%>" style=" color: black;"><%=x.title%></a></td>
+            <td><%= time_ago_in_words(x.created_at.in_time_zone("Asia/Seoul"))+" ago" %></td>
+          </tr>
+          <%end%>
+        </tbody>
+      </table>
+            
      <br><br><br><br><br>
     <div class="flickr_pagination">
      <%= will_paginate @announce %>
@@ -37,3 +50,4 @@
  <br><br><br><br><br><br><br><br>
   
 <%= render :partial =>"home/down"%>
+
