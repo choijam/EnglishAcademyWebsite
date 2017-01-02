@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716074600) do
+ActiveRecord::Schema.define(version: 20170102143945) do
 
   create_table "announces", force: :cascade do |t|
     t.string   "title"
@@ -21,6 +21,56 @@ ActiveRecord::Schema.define(version: 20160716074600) do
   end
 
   create_table "h100s", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "h110s", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "h120s", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "h130s", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "h150s", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "h200s", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "h201s", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "h301s", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
     t.datetime "created_at", null: false
@@ -58,14 +108,6 @@ ActiveRecord::Schema.define(version: 20160716074600) do
   create_table "h727s", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "h730s", force: :cascade do |t|
-    t.string   "title"
-    t.string   "content"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

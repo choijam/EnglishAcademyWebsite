@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :H730s
+  has_many :H200s
   has_many :H727s
   has_many :H339s
   has_many :H500s

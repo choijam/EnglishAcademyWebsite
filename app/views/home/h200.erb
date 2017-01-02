@@ -8,7 +8,7 @@
     <% unless current_user.nil? %>
       <% if current_user.email == "snowgirl2677@naver.com" %>
         <div class="row right">
-        <a href="/home/h730_write" class="btn-large waves-effect waves-light orange">숙제 작성</a>
+        <a href="/home/h200_write" class="btn-large waves-effect waves-light orange">숙제 작성</a>
         </div>
       <% end %>
     <% end %>  
@@ -35,24 +35,27 @@
           </tr>
         </thead>
         <tbody>
-          <%@h730.each do |x|%>
+          <%@h200.each do |x|%>
           <tr>
-            <td><a href="/home/h730_content_view/<%=x.id%>" style=" color: black;"><%=x.title%></a></td>
+            <td><a href="/home/h200_content_view/<%=x.id%>" style=" color: black;"><%=x.title%></a></td>
             <td><%= time_ago_in_words(x.created_at.in_time_zone("Asia/Seoul"))+" ago" %></td>
           </tr>
           <%end%>
-        </tbody>
+        </tbody>  
     </table>
+ 
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     
     
    
-
-    <br><br>
-      
-    <!--paginate 출력-->  
+    
+    <!--paginate 출력-->
     <div class="flickr_pagination">
-    <%= will_paginate @h730 %>
+    <%= will_paginate @h200 %>
     </div>
+    
+
+    
     <!--숙제 출력 종료-->
   
     

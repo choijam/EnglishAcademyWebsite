@@ -50,51 +50,51 @@ class HomeController < ApplicationController
     redirect_to '/home/three'
   end
   
-  def h730_content_view
-    @mo_content=H730.find(params[:id])
+  def h200_content_view
+    @mo_content=H200.find(params[:id])
   end
   
-  def de_h730
-    de_h730=H730.find(params[:id])
-    de_h730.destroy
-    redirect_to '/home/h730'
+  def de_h200
+    de_h200=H200.find(params[:id])
+    de_h200.destroy
+    redirect_to '/home/h200'
     
   end
   
-  def h730
+  def h200
     WillPaginate.per_page= 10
-    @h730=H730.paginate(:page => params[:page]).order('created_at desc')
+    @h200=H200.all.paginate(:page => params[:page]).order('created_at desc')
   end
   
-  def h730_upload
-    allcontents= H730.new(title: params[:title],
+  def h200_upload
+    allcontents= H200.new(title: params[:title],
     content: params[:content], user: current_user)
     allcontents.save
     
-    redirect_to '/home/h730'
+    redirect_to '/home/h200'
   end
   
-  def h730_write
+  def h200_write
   end
   
-  def h730_modify
-     @mo_content=H730.find(params[:id])
+  def h200_modify
+     @mo_content=H200.find(params[:id])
      
   end
   
-  def h730_update
-     up_content=H730.find(params[:id])
+  def h200_update
+     up_content=H200.find(params[:id])
      up_content.title = params[:title]
      up_content.content = params[:content]
      up_content.save
      
-     redirect_to '/home/h730'
+     redirect_to '/home/h200'
   end
   
   
   def h735
     WillPaginate.per_page= 10
-    @h735=H735.paginate(:page => params[:page]).order('created_at desc')
+    @h735=H735.all.paginate(:page => params[:page]).order('created_at desc')
   end
   
   def h735_upload
@@ -132,7 +132,7 @@ class HomeController < ApplicationController
   
   def h727
     WillPaginate.per_page= 10
-    @h727=H727.paginate(:page => params[:page]).order('created_at desc')
+    @h727=H727.all.paginate(:page => params[:page]).order('created_at desc')
   end
   
   def h727_upload
@@ -170,7 +170,7 @@ class HomeController < ApplicationController
   
   def h738
     WillPaginate.per_page= 10
-    @h738=H738.paginate(:page => params[:page]).order('created_at desc')
+    @h738=H738.all.paginate(:page => params[:page]).order('created_at desc')
   end
   
   def h738_upload
@@ -208,7 +208,7 @@ class HomeController < ApplicationController
   
   def h725
     WillPaginate.per_page= 10
-    @h725=H725.paginate(:page => params[:page]).order('created_at desc')
+    @h725=H725.all.paginate(:page => params[:page]).order('created_at desc')
   end
   
   def h725_upload
@@ -246,7 +246,7 @@ class HomeController < ApplicationController
   
   def h500
     WillPaginate.per_page= 10
-    @h500=H500.paginate(:page => params[:page]).order('created_at desc')
+    @h500=H500.all.paginate(:page => params[:page]).order('created_at desc')
   end
   
   def h500_upload
@@ -285,7 +285,7 @@ class HomeController < ApplicationController
   
   def h510
     WillPaginate.per_page= 10
-    @h510=H510.paginate(:page => params[:page]).order('created_at desc')
+    @h510=H510.all.paginate(:page => params[:page]).order('created_at desc')
   end
   
   def h510_upload
@@ -323,7 +323,7 @@ class HomeController < ApplicationController
   
   def h339
     WillPaginate.per_page= 10
-    @h339=H339.paginate(:page => params[:page]).order('created_at desc')
+    @h339=H339.all.paginate(:page => params[:page]).order('created_at desc')
   end
   
   def h339_upload
@@ -361,7 +361,7 @@ class HomeController < ApplicationController
   
   def announce
     WillPaginate.per_page= 10
-    @announce=Announce.paginate(:page => params[:page]).order('created_at desc')
+    @announce=Announce.all.paginate(:page => params[:page]).order('created_at desc')
     @a=Announce.all
     
   end
@@ -401,7 +401,7 @@ class HomeController < ApplicationController
    
   def h100
     WillPaginate.per_page= 10
-    @h100=H100.paginate(:page => params[:page]).order('created_at desc')
+    @h100=H100.all.paginate(:page => params[:page]).order('created_at desc')
   end
   
   def h100_upload
@@ -437,6 +437,256 @@ class HomeController < ApplicationController
      up_content.save
     redirect_to '/home/h100'
   end
+  
+  
+  def h110
+    WillPaginate.per_page= 10
+    @h110=H110.all.paginate(:page => params[:page]).order('created_at desc')
+  end
+  
+  def h110_upload
+    allcontents=H110.new
+    allcontents.title=params[:title]
+    allcontents.content=params[:content]
+    allcontents.save
+    redirect_to '/home/h110'
+  end
+  
+  def h110_write
+  end
+  
+  def de_h110
+    de_h110=H110.find(params[:id])
+    de_h110.destroy
+    redirect_to '/home/h110'
+  end
+  
+  def h110_modify
+     @mo_content=H110.find(params[:id])
+     
+  end
+  
+  def h110_content_view
+     @mo_content=H110.find(params[:id])
+  end
+
+  def h110_update
+     up_content=H110.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h110'
+  end
+  
+  
+  
+  
+  def h120
+    WillPaginate.per_page= 10
+    @h120=H120.all.paginate(:page => params[:page]).order('created_at desc')
+  end
+  
+  def h120_upload
+    allcontents=H120.new
+    allcontents.title=params[:title]
+    allcontents.content=params[:content]
+    allcontents.save
+    redirect_to '/home/h120'
+  end
+  
+  def h120_write
+  end
+  
+  def de_h120
+    de_h120=H120.find(params[:id])
+    de_h120.destroy
+    redirect_to '/home/h120'
+  end
+  
+  def h120_modify
+     @mo_content=H120.find(params[:id])
+     
+  end
+  
+  def h120_content_view
+     @mo_content=H120.find(params[:id])
+  end
+
+  def h120_update
+     up_content=H120.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h120'
+  end
+  
+  
+  
+  
+  # 130시작
+  def h130
+    WillPaginate.per_page= 10
+    @h130=H130.all.paginate(:page => params[:page]).order('created_at desc')
+  end
+  
+  def h130_upload
+    allcontents=H130.new
+    allcontents.title=params[:title]
+    allcontents.content=params[:content]
+    allcontents.save
+    redirect_to '/home/h130'
+  end
+  
+  def h130_write
+  end
+  
+  def de_h130
+    de_h130=H130.find(params[:id])
+    de_h130.destroy
+    redirect_to '/home/h130'
+  end
+  
+  def h130_modify
+     @mo_content=H130.find(params[:id])
+     
+  end
+  
+  def h130_content_view
+     @mo_content=H130.find(params[:id])
+  end
+
+  def h130_update
+     up_content=H130.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h130'
+  end  
+  
+  
+    # 150시작
+  def h150
+    WillPaginate.per_page= 10
+    @h150=H150.all.paginate(:page => params[:page]).order('created_at desc')
+  end
+  
+  def h150_upload
+    allcontents=H150.new
+    allcontents.title=params[:title]
+    allcontents.content=params[:content]
+    allcontents.save
+    redirect_to '/home/h150'
+  end
+  
+  def h150_write
+  end
+  
+  def de_h150
+    de_h150=H150.find(params[:id])
+    de_h150.destroy
+    redirect_to '/home/h130'
+  end
+  
+  def h150_modify
+     @mo_content=H150.find(params[:id])
+     
+  end
+  
+  def h150_content_view
+     @mo_content=H150.find(params[:id])
+  end
+
+  def h150_update
+     up_content=H150.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h150'
+  end  
+  
+  
+  # 201시작
+  def h201
+    WillPaginate.per_page= 10
+    @h201=H201.all.paginate(:page => params[:page]).order('created_at desc')
+  end
+  
+  def h201_upload
+    allcontents=H201.new
+    allcontents.title=params[:title]
+    allcontents.content=params[:content]
+    allcontents.save
+    redirect_to '/home/h201'
+  end
+  
+  def h201_write
+  end
+  
+  def de_h201
+    de_h201=H201.find(params[:id])
+    de_h201.destroy
+    redirect_to '/home/h201'
+  end
+  
+  def h201_modify
+     @mo_content=H201.find(params[:id])
+     
+  end
+  
+  def h201_content_view
+     @mo_content=H201.find(params[:id])
+  end
+
+  def h201_update
+     up_content=H201.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h201'
+  end  
+  
+  
+  # 301시작
+  def h301
+    WillPaginate.per_page= 10
+    @h301=H301.all.paginate(:page => params[:page]).order('created_at desc')
+  end
+  
+  def h301_upload
+    allcontents=H301.new
+    allcontents.title=params[:title]
+    allcontents.content=params[:content]
+    allcontents.save
+    redirect_to '/home/h301'
+  end
+  
+  def h301_write
+  end
+  
+  def de_h301
+    de_h301=H301.find(params[:id])
+    de_h301.destroy
+    redirect_to '/home/h301'
+  end
+  
+  def h301_modify
+     @mo_content=H301.find(params[:id])
+     
+  end
+  
+  def h301_content_view
+     @mo_content=H301.find(params[:id])
+  end
+
+  def h301_update
+     up_content=H301.find(params[:id])
+     up_content.title=params[:title]
+     up_content.content=params[:content]
+     up_content.save
+    redirect_to '/home/h301'
+  end  
+  
+  
   
   
 end

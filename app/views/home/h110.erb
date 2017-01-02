@@ -1,0 +1,68 @@
+<%= render :partial =>"home/basic"%>
+<br><br>
+
+ <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+    
+    <% unless current_user.nil? %>
+      <% if current_user.email == "snowgirl2677@naver.com" %>
+        <div class="row right">
+        <a href="/home/h110_write" class="btn-large waves-effect waves-light orange">숙제 작성</a>
+        </div>
+      <% end %>
+    <% end %>  
+    
+    <br><br><br><br>
+    
+     <!--숙제 출력-->
+    <style>
+    table.highlight{ table-layout:fixed; }
+    
+    table.highlight th, td {
+        
+        width:10px;
+    }
+    </style>
+
+    <table class="highlight">
+          <col width="75px" />
+          <col width="20px" />
+        <thead>
+          <tr>
+              <th>제목</th>
+              <th>날짜</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@h110.each do |x|%>
+          <tr>
+            <td><a href="/home/h110_content_view/<%=x.id%>" style=" color: black;"><%=x.title%></a></td>
+            <td><%= time_ago_in_words(x.created_at.in_time_zone("Asia/Seoul"))+" ago" %></td>
+          </tr>
+          <%end%>
+        </tbody>
+    </table>
+    
+    
+   
+
+      <br><br>
+      
+    <!--paginate 출력-->  
+    <div class="flickr_pagination">
+    <%= will_paginate @h110 %>
+    </div>
+    <!--숙제 출력 종료-->
+  
+    
+
+   
+      
+      <br><br>
+    </div>
+  </div>
+
+
+<br><br><br><br><br><br><br><br><br><br>
+<%= render :partial =>"home/down"%>
